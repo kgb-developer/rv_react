@@ -1,0 +1,218 @@
+.Card {
+    display: flex;
+    padding: 14px;
+    width: calc(33.33% - 30px);
+}
+
+.Card__Wrap {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px 1px rgba(0,0,0,.25);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.Card__Header {
+    padding: 0 14px;
+}
+
+.Card__H2 {
+    border-bottom: 2px solid #eee;
+    color: #3f3f3f;
+    font-family: OpenSansLight, Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    margin: 0 10px;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.Card__Content {
+    flex: 1 0 auto;
+    flex-direction: column;
+    padding: 30px 14px 0;
+    text-align: center;
+}
+
+.Card__Phone {
+    align-items: center;
+    display: inline-flex;
+    display: -webkit-inline-flex;
+    justify-content: center;
+    color: #3f3f3f;
+    font-family: 'OpenSansExtraBold', Helvetica, Arial, sans-serif;
+    font-size: 26px;
+    margin: 0 auto;
+    padding-left: 28px;
+    position: relative;
+}
+
+.Card__Phone span {
+    display: none;
+}
+
+.Card__Phone:after, 
+.Card__Phone:before {
+    padding: 0;
+    position: absolute;
+}
+
+.Card__Phone:before {
+    color: #fff;
+    font-size: 14px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.Card__Phone:after {
+    background: #216ddf;
+    border-radius: 50%;
+    content: '';
+    height: 24px;
+    left: -5px;
+    top: 2px;
+    width: 24px;
+}
+
+.Card__Phone + span {
+    display: block;
+    font-size: 12px;
+    font-style: italic;
+    padding: 12px 0 0;
+    text-align: center;
+}
+
+.Card__Button {
+    background: 0 0;
+    border: 1px solid #0bc9c8;
+    border-radius: 4px;
+    color: #083d8c;
+    display: inline-block;
+    font-family: 'OpenSansBold', Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    outline: 0;
+    margin: 14px auto;
+    padding: 12px 16px;
+    transition: all .2s ease;
+}
+
+.Card__Button:hover {
+    background: #0bc9c8;
+    color: #fff;
+}
+
+.Card__Hours {
+    padding-bottom: 30px;
+}
+
+.Card__Hours span {
+    color: #3f3f3f;
+    display: block;
+    font-family: 'OpenSansBold', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    padding-bottom: 4px;
+    text-align: center;
+}
+
+.Card__List__Item {
+    display: block;
+    color: #3f3f3f;
+    font-size: 13px;
+    padding: 2px 0;
+    text-align: center;
+}
+
+.Card__Footer {
+    align-items: center;
+    background: #f6f6f6;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    display: flex;
+    height: 86px;
+    padding: 0 14px;
+}
+
+.Card__Footer__List {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 0 auto;
+    max-width: 240px;
+}
+
+.Card__Footer__List__Item {
+    color: #3f3f3f;
+    font-size: 12px;
+    margin: 0 6px;
+    padding: 4px 0;
+    white-space: nowrap;
+}
+
+.Card__Footer__List__Item:before {
+    color: #d8d8d8;
+    display: inline-block;
+    padding-right: 6px;
+    vertical-align: middle;
+}
+
+@media screen and (max-width: 1229px) {
+    .Card {
+        width: calc(50% - 30px);
+    }
+}
+
+@media screen and (max-width: 799px) {
+    .Card {
+        padding: 4px 14px;
+        width: 100%;
+    }
+
+    .Card__Wrap {
+        border-radius: 0;
+        box-shadow: 0 2px 4px 1px rgba(0,0,0,.1);
+    }
+
+    .Card:first-child {
+        border-top: 1px solid #d8d8d8;
+        padding-top: 14px;
+    }
+
+    .Card__H2 {
+        font-size: 20px;
+        padding: 20px 0;
+    }
+
+    .Card__Phone {
+        background: #216ddf;
+        color: #fff;
+        font-size: 18px;
+        padding: 6px 10px 6px 28px;
+    }
+
+    .Card__Phone span {
+        display: inline-block;
+        font-family: 'OpenSansExtraBold', Helvetica, Arial, sans-serif;
+        font-size: 10px;
+        margin: -12px 8px 0;
+        padding: 12px 0 0;
+    }
+
+    .Card__Phone:before {
+        transform: translateY(0);
+        left: 9px;
+        top: 10px;
+    }
+
+    .Card__Phone:after {
+        background: #083d8c;
+        border-radius: 0;
+        left: 4px;
+        top: 4px;
+    }
+
+    .Card__Footer {
+        border-radius: 0;
+    }
+}

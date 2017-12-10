@@ -1,0 +1,268 @@
+.SortMenu {
+    align-items: center;
+    background: #f6f6f6;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    margin: 0 14px 30px;
+    padding: 30px 14px;
+    position: relative;
+}
+
+.SortMenu__Zip {
+    color: #216ddf;
+    font-family: 'OpenSansBold', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+}
+
+.SortMenu__Results {
+    align-items: center;
+    display: flex;
+    position: relative;
+}
+
+.SortMenu__Zip + .SortMenu__Results {
+    margin-left: 30px;
+    padding-left: 30px;
+}
+
+.SortMenu__Zip + .SortMenu__Results:before {
+    background: #eeeeee;
+    content: '';
+    height: 54px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+}
+
+.SortMenu__Results__Title {
+    color: #3f3f3f;
+    font-family: 'OpenSansBold', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    position: relative;
+}
+
+.SortMenu__Results__Title:after {
+    display: none;
+}
+
+.SortMenu__Results__Filters {
+    align-items: center;
+    display: flex;
+}
+
+.SortMenu__Results__Filter {
+    margin-left: 34px;
+    position: relative;
+}
+
+.SortMenu__Results__Filter--Flex {
+    align-items: center;
+    display: flex;
+}
+
+.SortMenu__Results__Filter--Flex .SortMenu__Results__Filter__Tooltip {
+    margin-left: 8px;
+}
+
+.SortMenu__Results__Filter input {
+    height: 100%;
+    opacity: 0;
+    position: absolute; 
+    width: 100%;
+    z-index: 1;
+}
+
+.SortMenu__Results__Filter input:hover {
+    cursor: pointer;
+}
+
+.SortMenu__Results__Filter label {
+    font-size: 12px;
+    text-transform: capitalize;
+}
+
+.SortMenu__Results__Filter input + label {
+    align-items: center;
+    display: flex;
+    padding: 0;
+    position: relative;
+}
+
+.SortMenu__Results__Filter input + label:before {
+    background: #ffffff;;
+    border: 1px solid #d8d8d8;
+    border-radius: 4px;
+    content: '';
+    display: inline-block;
+    height: 24px;
+    margin-right: 10px;
+    transition: all 0.2s ease;
+    vertical-align: text-top;
+    width: 24px;
+}
+
+.SortMenu__Results__Filter input:hover + label:before,
+.SortMenu__Results__Filter input:checked + label:before {
+    background: #216ddf;
+    border-color: #216ddf;
+}
+
+.SortMenu__Results__Filter input:checked + label:after {
+    background: #ffffff;
+    border-radius: 2px;
+    content: '';
+    height: 8px;
+    left: 13px;
+    position: absolute;
+    top: 13px;
+    transform: translate(-50%, -50%);
+    width: 8px;
+}
+
+.SortMenu__Results__Filter__Tooltip {
+    background: #d8d8d8;
+    border-radius: 4px;
+    color: #083d8c;
+    display: inline-block;
+    font-family: 'OpenSansBold', Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    height: 13px;
+    padding: 4px 8px;
+    transition: background .2s ease;
+    z-index: 1;
+}
+
+.SortMenu__Results__Filter__Tooltip:hover {
+    background: #083d8c;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.SortContent {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+}
+
+.SortContent:empty {
+    position: relative
+}
+
+.SortContent:empty:before {
+    color: #216ddf;
+    content: 'Please select a Pool Pro specialty!';
+    display: block;
+    font-family: 'OpenSansExtraBold', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+}
+
+@media screen and (max-width: 1010px) {
+    .SortMenu {
+        align-items: flex-start;
+        border-radius: 0;
+        height: 45px;
+        justify-content: space-between;
+        margin: -40px 0 0;
+        padding: 14px;
+        transition: height 0.4s ease;
+    }
+
+    .SortMenu--Active {
+        height: 310px;
+    }
+    
+    .SortMenu__Zip,
+    .SortMenu__Results__Title {
+        font-size: 16px;
+    }
+
+    .SortMenu__Zip {
+        margin-top: 14px;
+    }
+
+    .SortMenu__Zip + .SortMenu__Results {
+        margin: 0;
+        padding: 0;
+    }
+
+    .SortMenu__Results {
+        position: initial;
+    }
+
+    .SortMenu__Results__Title {
+        background: #ffffff;
+        border: 1px solid #d8d8d8;
+        padding: 12px 62px 12px 14px;
+        transition: color 0.3s ease;
+        white-space: nowrap;
+    }
+
+    .SortMenu__Results:hover .SortMenu__Results__Title {
+        color: #216ddf;
+        cursor: pointer;
+    }
+
+    .SortMenu__Results__Title:after {
+        align-items: center;
+        background: #f6f6f6;
+        border-left: 1px solid #d8d8d8;
+        display: flex;
+        font-size: 10px;
+        height: 100%;
+        padding: 0 18px;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .SortMenu__Results:before {
+        display: none;
+    }
+
+    .SortMenu__Results__Filters {
+        align-items: flex-start;
+        background: #ffffff;
+        border: 1px solid #d8d8d8;
+        display: none;
+        flex-direction: column;
+        left: 0;
+        margin: 0 14px;
+        position: absolute;
+        opacity: 0;
+        top: 58px;
+        transition: opacity 0.4s ease;
+        visibility: hidden;
+        width: calc(100% - 30px);
+    }
+
+    .SortMenu--Active .SortMenu__Results__Filters {
+        animation: filterOpacity 0.4s 0.2s both;
+        display: flex;
+    }
+
+    .SortMenu__Results__Filter {
+        margin-left: 24px;
+        padding: 20px 0;
+    }
+
+    .SortMenu__Results__Filter label {
+        font-size: 16px;
+    }
+
+    .SortContent:empty:before {
+        padding-top: 30px;
+    }
+}
+
+@keyframes filterOpacity {
+    from    { opacity: 0; }
+    to      { 
+        opacity: 1;
+        visibility: visible;
+     }
+}

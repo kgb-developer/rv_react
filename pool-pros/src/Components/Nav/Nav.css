@@ -1,0 +1,293 @@
+.Nav {
+    position: relative;
+}
+
+.Nav__SubNav {
+    background: #083d8c;
+    padding: 14px;
+}
+
+.Nav__SubNav .Wrap {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.Nav__SubNav__Link {
+    color: #ffffff;
+    font-size: 12px;
+    position: relative;
+    text-decoration: none;
+}
+
+.Nav__SubNav__Link:hover {
+    text-decoration: underline;
+}
+
+.Nav__SubNav__Link + .Nav__SubNav__Link {
+    margin-left: 40px;
+}
+
+.Nav__SubNav__Link:after {
+    display: inline-block;
+    padding-left: 6px;
+    position: relative;
+    top: 2px;
+}
+
+.Nav__Main {
+    padding: 28px 14px;
+}
+
+.Nav__Main .Wrap {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Nav__Wrap {
+    align-items: center;
+    display: flex;
+}
+
+.Button.Nav__Location {
+    background: transparent;
+    border: 1px solid #216ddf;
+    border-radius: 4px;
+    color: #216ddf;
+    font-family: 'OpenSansBold', Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    outline: 0;
+    padding: 12px 16px;
+    transition: all .2s ease;
+    white-space: nowrap;
+}
+
+.Button.Nav__Location:hover {
+    background: #216ddf;
+    border-color: #216ddf;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.Button.Nav__Location:before {
+    padding-right: 6px;
+    position: relative;
+    top: 2px;
+}
+.Logo__Img {
+    flex: 1 0 auto;
+    height: 32px;
+    width: 231px;
+}
+
+.Nav__Link {
+    color: #083d8c;
+    font-family: 'OpenSansBold', Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    margin-right: 60px;
+    position: relative;
+    transition: color 0.2 ease;
+}
+
+.Nav__Link:hover {
+    color: #216ddf;
+}
+
+.Nav__Link:after {
+    display: none;
+}
+
+.Button.Nav__Mobile {
+    background: #ffffff;
+    border: 0;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px 2px rgba(0,0,0,.3);
+    color: #083d8c;
+    display: none;
+    font-size: 0;
+    height: 52px;
+    padding: 0;
+    position: relative;
+    width: 52px;
+}
+
+.Button.Nav__Mobile:hover {
+    cursor: pointer;
+}
+
+.Button.Nav__Mobile:before {
+    font-size: 22px;
+    height: 22px;
+    left: 50%;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Nav__Links--Active + .Nav__Location + .Button.Nav__Mobile {
+    background: transparent;
+    box-shadow: none;
+}
+
+.Nav__Links--Active + .Nav__Location + .Button.Nav__Mobile:before {
+    content: '␡';
+    color: #0bc9c8;
+}
+
+.Nav__Links__Mobile__Title {
+    background: #ffffff;
+    color: #01529e;
+    display: none;
+    font-family: 'OpenSansBold', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    padding: 35px 14px 25px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.Nav__Links__Mobile__Close {
+    display: none;
+    font-size: 0;
+}
+
+.Nav__Links__Mobile__Close:hover {
+    cursor: pointer;
+}
+
+.Nav__Links__Mobile__Close:before {
+    transition: color .2s ease;
+    color: #0bc9c8;
+    font-size: 24px;
+    padding: 16px 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+@media screen and (max-width: 1010px) {
+    .Nav__Main {
+        padding: 14px;
+    }
+
+    .Nav__SubNav {
+        display: none;
+    }
+
+    .Nav__Links {
+        background: #f6f6f6;
+        border-bottom: 5px solid #0bc9c8;
+        border-top: 5px solid #0bc9c8;
+        flex-direction: column;
+        left: 0;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        transition: max-height 0.6s ease;
+        width: 100%;
+        visibility: hidden;
+        z-index: 1;
+    }
+
+    .Nav__Links--Active {
+        display: flex;
+        opacity: 1;
+        max-height: 600px;
+        visibility: visible;
+    }
+
+    .Button.Nav__Mobile {
+        display: block;
+        top: 6px;
+        transition: color .3s ease;
+        z-index: 1;
+    }
+
+    .Button.Nav__Mobile:hover {
+        background: #083d8c;
+        color: #ffffff;
+    }
+
+    .Button.Nav__Location {
+        border-width: 2px;
+        margin-right: 40px;
+        padding: 8px;
+    }
+
+    .Nav__Links__Mobile__Title {
+        display: block;
+    }
+
+    .Nav__Links__Mobile__Close {
+        display: block;
+    }
+
+    .Nav__Links__Mobile__Close:before {
+        color: #0bc9c8;
+        font-size: 24px;
+        padding: 16px 20px;
+        position: absolute;
+        right: 0;
+        transition: color .2s ease;
+        top: 0;
+    }
+
+    .Nav__Link {
+        color: #616161;
+        font-family: 'OpenSansSemiBold', Helvetica, Arial, sans-serif;
+        font-size: 18px;
+        margin: 0;
+        padding: 30px 20px;
+    }
+
+    .Nav__Link:hover {
+        background: #ffffff;
+        color: #0bc9c8;
+    }
+
+    .Nav__Link:after {
+        color: #0bc9c8;
+        display: block;
+        position: absolute;
+        right: 20px;
+        transform: translateY(-50%);
+        top: 50%;
+    }
+
+    .Nav__Link:not(:last-child) {
+        border-bottom: 2px solid #ffffff;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .Logo__Link {
+        display: inline-flex;
+    }
+
+    .Logo__Img {
+        height: 22px;
+        width: 158px;
+    }
+
+    .Nav__Main {
+        padding: 2px 14px;
+    }
+}
+
+@media screen and (max-width: 469px) {
+    .Button.Nav__Location {
+        margin-left: 24px;
+        margin-right: 0;
+    }
+
+    .Button.Nav__Location span {
+        display: none;
+    }
+
+    .Nav__Wrap {
+        justify-content: space-between;
+        width: 100%;
+    }
+}
